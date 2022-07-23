@@ -19,7 +19,7 @@ interface IItemList {
   items: IItem[];
 }
 
-const ItemList = ({ items }: IItemList) => {
+const ItemsList = ({ items }: IItemList) => {
   return (
     <>
       {items?.map(({ name, quantity, id }) => (
@@ -33,27 +33,25 @@ const ItemList = ({ items }: IItemList) => {
 
 const Input = () => {
   return (
-    <>
-      <div className={style.container}>
-        <label htmlFor="item-input">Name</label>
-        <input type="text" name="item-input" id="item-input" />
-        <button>Add</button>
-        <ItemList
-          items={[
-            { id: "1", name: "toto", quantity: 3 },
-            { id: "2", name: "toto", quantity: 3 },
-          ]}
-        />
-      </div>
-    </>
+    <div className={style.container}>
+      <label htmlFor="item-input">Name</label>
+      <input type="text" name="item-input" id="item-input" />
+      <button>Add</button>
+    </div>
   );
 };
 
 const Todos = () => {
   return (
-    <>
+    <div className={style.container}>
       <Input />
-    </>
+      <ItemsList
+        items={[
+          { id: "1", name: "toto", quantity: 3 },
+          { id: "2", name: "toto", quantity: 3 },
+        ]}
+      />
+    </div>
   );
 };
 
