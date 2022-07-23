@@ -10,8 +10,8 @@ const ItemList = ({ items }: IItemList) => {
   return (
     <>
       {items?.map(({ name, quantity, id }) => (
-        <div className={style.item}>
-          <Item key={id} name={name} quantity={quantity} id={id} /> <div>X</div>
+        <div key={id} className={style.item}>
+          <Item name={name} quantity={quantity} id={id} /> <div>X</div>
         </div>
       ))}
     </>

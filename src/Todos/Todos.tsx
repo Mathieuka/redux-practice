@@ -2,17 +2,15 @@ import style from "./Todos.module.css";
 import React from "react";
 import ItemList from "./ItemList";
 import Input from "./Input";
+import { useSelector } from "react-redux";
 
 const Todos = () => {
+  const items = useSelector((state: any) => state.todos.items);
+
   return (
     <div className={style.container}>
-      <Input />
-      <ItemList
-        items={[
-          { id: "1", name: "toto", quantity: 3 },
-          { id: "2", name: "toto", quantity: 3 },
-        ]}
-      />
+      <Input items={items} />
+      <ItemList items={items} />
     </div>
   );
 };
