@@ -1,15 +1,16 @@
 import style from "./Todos.module.css";
 import React, { useState } from "react";
 import { add } from "../redux/features/todos/todosSlice";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../redux/hooks";
+import { IItem } from "./Item";
 
 interface IInput {
-  items: any[];
+  items: IItem[];
 }
 
 const Input = ({ items }: IInput) => {
   const [name, setName] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const addItem = () => {
     const itemExist = items.find((item) => item.name === name);

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IItem } from "../../../Todos/Item";
 
 export const todosSlice = createSlice({
   name: "todos",
@@ -6,7 +7,7 @@ export const todosSlice = createSlice({
     items: [],
   },
   reducers: {
-    add: (state: any, { payload }) => {
+    add: (state: { items: IItem[] }, { payload }) => {
       state.items = [...state.items, payload];
     },
   },

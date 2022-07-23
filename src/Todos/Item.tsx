@@ -9,7 +9,7 @@ export interface IItem {
 const Item = ({ id, name, quantity }: IItem) => {
   return (
     <div>
-      Quantity: {quantity} - {name}
+      Qty: {quantity} / Name: {name}
     </div>
   );
 };
