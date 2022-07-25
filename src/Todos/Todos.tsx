@@ -6,7 +6,7 @@ import { useAppSelector } from "../redux/hooks";
 import { itemsSelector } from "../redux/selectors/todos";
 
 const Todos = () => {
-  const { items } = useAppSelector(itemsSelector);
+  const items = useAppSelector(itemsSelector);
 
   return (
     <div className={style.container}>

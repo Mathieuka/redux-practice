@@ -10,9 +10,12 @@ export const todosSlice = createSlice({
     add: (state: { items: IItem[] }, { payload }) => {
       state.items = [...state.items, payload];
     },
+    deleteItem: (state: { items: IItem[] }, { payload }) => {
+      state.items = state.items.filter(({ id }) => id !== payload.id);
+    },
   },
 });
 
-export const { add } = todosSlice.actions;
+export const { add, deleteItem } = todosSlice.actions;
 
 export default todosSlice.reducer;
