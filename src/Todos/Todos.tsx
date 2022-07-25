@@ -3,9 +3,10 @@ import React from "react";
 import ItemList from "./ItemList";
 import Input from "./Input";
 import { useAppSelector } from "../redux/hooks";
+import { itemsSelector } from "../redux/selectors/todos";
 
 const Todos = () => {
-  const { items } = useAppSelector((state) => state.todos);
+  const { items } = useAppSelector(itemsSelector);
 
   return (
     <div className={style.container}>

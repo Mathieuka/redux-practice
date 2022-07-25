@@ -13,8 +13,8 @@ const Input = ({ items }: IInput) => {
   const dispatch = useAppDispatch();
 
   const addItem = () => {
-    const itemExist = items.find((item) => item.name === name);
-    if (name && !itemExist) {
+    const exist = items.find((item) => item.name === name);
+    if (name && !exist) {
       dispatch(add({ id: name, name, quantity: 1 }));
       setName("");
     }
